@@ -1,36 +1,38 @@
 <div class="container">
 
-    <h3>Sign Up</h3>
+  <h3>Sign Up</h3>
 
-    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
-      <input formControlName="userName">
-      <button type="submit">sign up</button>
-    </form>
-
-
+  <form [formGroup]="signUpForm" (ngSubmit)="addPost()">
     <label for="username"><b>User Name</b></label>
-    <input type="text" placeholder="Enter user name" name="" required>
+    <input type="text" placeholder="Enter user name" formControlName="userName" required>
+
+    <label for="username"><b>Email</b></label>
+    <input type="text" placeholder="Enter your mail" formControlName="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter password" name="psw" required>
+    <input type="password" placeholder="Enter password" formControlName="password" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" formControlName="passwordRepeat" required>
 
     <label for="first-name"><b>First Name</b></label>
-    <input type="text" placeholder="Enter first name" name="" required>
+    <input type="text" placeholder="Enter first name" formControlName="firstName" required>
 
     <label for="last-name"><b>Last Name</b></label>
-    <input type="text" placeholder="Enter last name" name="" required>
+    <input type="text" placeholder="Enter last name" formControlName="lastName" required>
 
     <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
 
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </form>
+
+
+
 
 </div>
