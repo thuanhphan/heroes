@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user", schema = "public")
 
-
 public class User {
 		
 		// region -- Fields --

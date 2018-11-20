@@ -4,17 +4,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.hello.dal.UserDao;
 import com.example.hello.model.User;
 
-
-
 @Service(value = "userService")
 @Transactional
-public class UserService {
+public class UserService implements UserDetailsService {
 	
 	@Autowired
 	private UserDao userDao;
@@ -25,6 +26,12 @@ public class UserService {
 	// end
 
 	// region -- Methods --
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}	
 
 	public User getBy(int id) {
 		User res = userDao.getBy(id);
@@ -72,7 +79,5 @@ public class UserService {
 
 		return res;
 	}
-
-	
 
 }

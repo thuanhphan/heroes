@@ -3,24 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { HeroDetailComponent } from './views/hero-detail/hero-detail.component';
+import { HeroesComponent } from './views/heroes/heroes.component';
+import { MessagesComponent } from './views/messages/messages.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './views/sign-up/sign-up.component';
+import { SignInComponent } from './views/sign-in/sign-in.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ApiProvider } from './provider/api';
+import { UserProvider } from './provider/user';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -32,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignInComponent,
 
   ],
+  providers: [ApiProvider, UserProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

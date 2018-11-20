@@ -91,7 +91,7 @@ public class UserController {
 
 			if (tmp.isEmpty()) {
 				// Set Data
-				res.setResult("thu");
+				res.setResult("");
 			} else {
 				res.setError("User name or email have already registed!");
 			}

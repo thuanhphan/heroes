@@ -22,9 +22,4 @@ public interface UserDao extends CrudRepository<User, Integer>{
 	@Query("FROM User a WHERE (a.userName = :userName AND a.password = :password)")
 	public User getByUP(@Param("userName") String userName, @Param("password") String password);
 	
-	
-	
-	
-	
-
 }
