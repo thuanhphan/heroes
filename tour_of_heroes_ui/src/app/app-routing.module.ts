@@ -8,7 +8,7 @@ import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { SignInComponent } from './views/sign-in/sign-in.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
